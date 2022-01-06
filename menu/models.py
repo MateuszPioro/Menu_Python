@@ -15,7 +15,7 @@ class Components(models.Model):
 class Meals(models.Model):
     name=models.CharField(max_length=30)
     price=models.IntegerField()
-    components=models.ManyToManyField(Components)
+    components=models.ManyToManyField(Components,null=True, blank=True)
     
     def __str__(self):
         return f'{self.name}'
